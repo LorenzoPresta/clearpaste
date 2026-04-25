@@ -24,9 +24,18 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build and Publish Release
+      - name: Build Application
+        run: |
+          yarn build
+          yarn dist --mac
+
+      - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn build
-          yarn dist --mac --publish always
+          # Use GitHub CLI to create the release and upload the assets
+          gh release create ${{ github.ref_name }} \
+            dist/*.dmg \
+            dist/*.zip \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "Automated release for ${{ github.ref_name }}"
