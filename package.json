@@ -2,6 +2,10 @@
   "name": "clearpaste",
   "version": "1.0.0",
   "description": "Lightweight clipboard manager for macOS with automatic text cleaning",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LorenzoPresta/clearpaste.git"
+  },
   "main": "./out/main/index.js",
   "author": "ClearPaste",
   "license": "MIT",
@@ -43,6 +47,11 @@
       ],
       "sign": false,
       "identity": null
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "LorenzoPresta",
+      "repo": "clearpaste"
     },
     "files": [
       "out/**/*",
