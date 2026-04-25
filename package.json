@@ -1,6 +1,6 @@
 {
   "name": "clearpaste",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight clipboard manager for macOS with automatic text cleaning",
   "repository": {
     "type": "git",
